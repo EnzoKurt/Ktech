@@ -1,0 +1,545 @@
+<!--
+
+                            Online HTML Compiler.
+                Code, Compile, Run and Debug HTML program online.
+Write your code in this editor and press "Run" button to execute it.
+
+-->
+
+<!DOCTYPE html>
+
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>KTech - Manutenções e Soluções em TI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050b1a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* MENU */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(5,11,26,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:#1d6eff;
+}
+
+.logo span{
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#1d6eff;
+}
+
+.menu-btn{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 60px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.82)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:5rem;
+    margin-bottom:10px;
+}
+
+.hero h1 span{
+    color:#1d6eff;
+}
+
+.hero p{
+    color:#c7c7c7;
+    line-height:1.8;
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-primary{
+    background:#1d6eff;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    background:#0055ff;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.btn-whatsapp:hover{
+    transform:translateY(-5px);
+    background:#18c25a;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:60px;
+    color:#1d6eff;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#0d1529;
+    padding:35px;
+    border-radius:20px;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#1d6eff;
+}
+
+.card i{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#1d6eff;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#c7c7c7;
+    line-height:1.7;
+}
+
+/* TABELA */
+
+.pricing{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#0d1529;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+th{
+    background:#1d6eff;
+    padding:18px;
+    text-align:left;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    color:#d7d7d7;
+}
+
+tr:hover{
+    background:#111d38;
+}
+
+/* CTA */
+
+.cta{
+    background:#0d1529;
+    border-radius:25px;
+    text-align:center;
+    padding:70px 30px;
+}
+
+.cta p{
+    color:#d0d0d0;
+    margin:20px 0 35px;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#8b8b8b;
+    background:#030711;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        width:250px;
+        height:calc(100vh - 80px);
+        background:#091224;
+        flex-direction:column;
+        padding:40px;
+        transition:0.4s;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        K<span>Tech</span>
+    </div>
+
+    <div class="nav-links" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#valores">Valores</a>
+        <a href="#contato">Contato</a>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</nav>
+
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+
+<div class="hero-content">
+
+    <h1>
+        <span>K</span>Tech
+    </h1>
+
+    <p>
+        Soluções inteligentes em tecnologia, manutenção e suporte técnico.
+        Atendimento rápido, moderno e profissional para empresas e residências.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#servicos" class="btn btn-primary">
+            <i class="fa-solid fa-laptop-code"></i>
+            Ver Serviços
+        </a>
+
+        <a href="https://wa.me/553186902080"
+           target="_blank"
+           class="btn btn-whatsapp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+            Chamar no WhatsApp
+
+        </a>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- SERVIÇOS -->
+
+<section id="servicos">
+
+
+<h2 class="section-title">
+    Serviços de TI
+</h2>
+
+<div class="cards">
+
+    <div class="card">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Manutenção de PCs</h3>
+        <p>
+            Diagnóstico, limpeza, reparos e otimização de computadores.
+        </p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-laptop"></i>
+        <h3>Formatação</h3>
+        <p>
+            Instalação de Windows, drivers, programas e backup.
+        </p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-wifi"></i>
+        <h3>Redes e Wi-Fi</h3>
+        <p>
+            Configuração de roteadores, repetidores e redes empresariais.
+        </p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Segurança Digital</h3>
+        <p>
+            Remoção de vírus, proteção e segurança de dados.
+        </p>
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- TABELA -->
+
+<section id="valores">
+
+
+<h2 class="section-title">
+    Valores dos Serviços
+</h2>
+
+<div class="pricing">
+
+    <table>
+
+        <tr>
+            <th>Serviço</th>
+            <th>Valor</th>
+        </tr>
+
+        <tr>
+            <td>Formatação Completa</td>
+            <td>R$ 150,00</td>
+        </tr>
+
+        <tr>
+            <td>Limpeza Interna de Computador</td>
+            <td>R$ 100,00</td>
+        </tr>
+
+        <tr>
+            <td>Troca de SSD / Upgrade</td>
+            <td>R$ 130,00</td>
+        </tr>
+
+        <tr>
+            <td>Instalação de Programas</td>
+            <td>R$ 80,00</td>
+        </tr>
+
+        <tr>
+            <td>Remoção de Vírus</td>
+            <td>R$ 100,00</td>
+        </tr>
+
+        <tr>
+            <td>Configuração de Roteador</td>
+            <td>R$ 90,00</td>
+        </tr>
+
+        <tr>
+            <td>Atendimento Residencial</td>
+            <td>R$ 200,00</td>
+        </tr>
+
+        <tr>
+            <td>Suporte Remoto</td>
+            <td>R$ 60,00</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+</section>
+
+<!-- CONTATO -->
+
+<section id="contato">
+
+
+<div class="cta">
+
+    <h2 class="section-title">
+        Precisa de suporte?
+    </h2>
+
+    <p>
+        Entre em contato agora mesmo e tenha atendimento rápido e profissional.
+    </p>
+
+    <a href="https://wa.me/553186902080"
+       target="_blank"
+       class="btn btn-whatsapp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+        Falar com a KTech
+
+    </a>
+
+</div>
+
+
+</section>
+
+<footer>
+
+
+© 2026 KTech - Manutenções e Soluções em TI
+
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
