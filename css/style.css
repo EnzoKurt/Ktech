@@ -21,6 +21,7 @@ left:0;
 z-index:999;
 background:rgba(0,0,0,0.65);
 backdrop-filter:blur(10px);
+box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 }
 
 .navbar{
@@ -65,7 +66,8 @@ cursor:pointer;
 }
 
 .hero{
-height:100vh;
+min-height:100vh;
+padding-top:80px;
 background:
 linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')
