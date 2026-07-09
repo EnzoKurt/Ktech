@@ -34,13 +34,15 @@ align-items:center;
 }
 
 .logo{
-font-size:2rem;
-font-weight:700;
-color:#2f74ff;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .logo span{
-color:white;
+    color: #0ea5e9; /* mantenha a cor que você já usa */
 }
 
 .nav-links{
